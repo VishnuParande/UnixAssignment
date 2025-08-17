@@ -24,7 +24,7 @@ echo "not a match, is less , try again"
 elif [ "$guess" -lt "$file_count" ]; then
 echo "not a match, is greater , try again"
 else
-echo "thats it, its a match, the count is correct"
+echo "congratulations, its a match, the count is correct"
 break
 fi
 
