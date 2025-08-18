@@ -20,9 +20,9 @@ continue
 fi
 
 if [ "$guess" -lt "$file_count" ]; then
-echo "not a match, is less , try again"
+echo "not a match, guess is too low , try again"
 elif [ "$guess" -lt "$file_count" ]; then
-echo "not a match, is greater , try again"
+echo "not a match, guess is too high , try again"
 else
 echo "congratulations, its a match, the count is correct"
 break
