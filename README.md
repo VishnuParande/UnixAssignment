@@ -1,5 +1,5 @@
-# a guessing game Project
-Unix Assignment Programs
-
-Time of run: Wed Aug 13 23:45:12 IST 2025
-Number of lines in Program:31
+README.md:guessinggame.sh
+  echo "#a guessing game Project" > README.md
+  echo ""
+  echo "Time of run: $$(date)" >> README.md
+  echo "Number of lines in Program: $$(wc -l < guessinggame.sh)" >> README.md
