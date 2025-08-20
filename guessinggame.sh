@@ -2,7 +2,7 @@
 
 # Function to count files in current directory
 function file_count {
-    echo $(ls -1 | wc -l)
+    echo $(ls -lrt | wc -l)
 }
 
 # This Function is to prompt user for the guess
