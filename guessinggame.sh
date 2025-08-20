@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Function to count files in current directory
-file_count(){
+file_count() {
     echo $(ls -lrt | wc -l)
 }
 
