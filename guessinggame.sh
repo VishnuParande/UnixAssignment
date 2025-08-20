@@ -1,31 +1,35 @@
 #!/bin/bash
-function file_cnt{
-echo $(ls -l | wc -l)
+
+# Function to count files in current directory
+function file_count {
+    echo $(ls -1 | wc -l)
 }
 
-echo "Please guess how many files in current directory"
+# This Function is to prompt user for the guess
+function fun_guess {
+    echo "Lets guess how many files are in the current directory:"
+    read guess
+}
 
-#calling function to get count
-file_cnt=$(file_cnt)
+# Main loop for guessing game
+function game {
+    actual_count=$(file_count)
+    echo "Welcome to the game!"
+    fun_guess
 
-#starting guessing loop
+    while [[ $guess -ne $actual_count ]]
+    do
+        if [[ $guess -lt $actual_count ]]
+        then
+            echo "Too low. Try again."
+        elif [[ $guess -gt $actual_count ]]
+        then
+            echo "Too high. Try again."
+        fi
+        fun_guess
+    done
 
-while true; 
-do
-read -p "whats your guess: " guess
+    echo "Congratulations! the guess for count is correct"
+}
 
-if ![[ "$guess" =~ ^[0-9]+$ ]]; then
-echo "not a valid number, please enter a valid number"
-continue
-fi
-
-if [ "$guess" -lt "$file_count" ]; then
-echo "not a match, guess is too low , try again"
-elif [ "$guess" -lt "$file_count" ]; then
-echo "not a match, guess is too high , try again"
-else
-echo "congratulations, its a match, the count is correct"
-break
-fi
-
-done
+game
