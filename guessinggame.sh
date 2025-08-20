@@ -1,18 +1,18 @@
 #!/bin/bash
 
 # Function to count files in current directory
-function file_count {
+function file_count(){
     echo $(ls -lrt | wc -l)
 }
 
 # This Function is to prompt user for the guess
-function fun_guess {
+function fun_guess(){
     echo "Lets guess how many files are in the current directory:"
     read guess
 }
 
 # Main loop for guessing game
-function game {
+function game(){
     actual_count=$(file_count)
     echo "Welcome to the game!"
     fun_guess
@@ -31,5 +31,4 @@ function game {
 
     echo "Congratulations! the guess for count is correct"
 }
-
 game
